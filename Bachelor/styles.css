@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
 
 *{
    font-family: 'Montserrat', sans-serif;
@@ -7,31 +8,99 @@
    outline: none; border:none;
    text-decoration: none;
    text-transform: capitalize;
-   transition: all .2s linear;
+   transition: all .2s linear;    
 }
 
 body{
-  background-color: grey;
+  background-color: none;
+}
+
+.background img {
+  position: absolute; 
+  width: 100%;
+  height: 100%;
 }
 
 .container{
+  height: 100%;
+  width: 100%;
+  position: absolute;
   padding:25px 10%;
   text-align: center;
 }
 
 .container .heading{
-  font-size: 30px;
-  padding-bottom: 25px;
+  color: white;
+  font-size: 35px;
+  font-weight: bolder;
+  padding-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-family: 'Fira Mono', monospace;
+  animation: glitch 2s linear infinite;
+  letter-spacing: -2px;
 }
 
-.container #search-box{
-  width: 600px;
-  border:3px solid #000;
-  padding:12px 15px;
-  font-size: 20px;
+@keyframes glitch{
+  2%,64%{
+    transform: translate(2px,0) skew(0deg);
+  }
+  4%,60%{
+    transform: translate(-2px,0) skew(0deg);
+  }
+  62%{
+    transform: translate(0,0) skew(5deg); 
+  }
 }
+
+.container .heading :before,
+.container .heading:after{
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+.container .heading:before{
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop{
+  2%,64%{
+    transform: translate(2px,-2px);
+  }
+  4%,60%{
+    transform: translate(-2px,2px);
+  }
+  62%{
+    transform: translate(13px,-1px) skew(-13deg); 
+  }
+}
+
+.container .heading:after{
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom{
+  2%,64%{
+    transform: translate(-2px,0);
+  }
+  4%,60%{
+    transform: translate(-2px,0);
+  }
+  62%{
+    transform: translate(-22px,5px) skew(21deg); 
+  }
+}
+
 
 .container .image-container{
+  margin-top: 3%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -68,11 +137,6 @@ body{
   font-size: 20px;
 }
 
-@media (max-width:768px){
-  .container #search-box{
-    width: 100%;
-  }
-}
 
 @media (max-width:450px){
 
@@ -87,7 +151,7 @@ body{
 
 .arrow-left {
   position: absolute;
-  bottom: 5%;
+  bottom: 36%;
   left: 7%;
   transform: translate(-50%, -50%);
   transform: rotate(90deg);
@@ -96,10 +160,10 @@ body{
 
 .arrow-left span {
   display: block;
-  width: 1.5vw;
-  height: 1.5vw;
-  border-bottom: 5px solid white;
-  border-right: 5px solid white;
+  width: 2.5vw;
+  height: 2.5vw;
+  border-bottom: 8px solid white;
+  border-right: 8px solid white;
   transform: rotate(45deg);
   margin: -10px;
   animation: animate 2s infinite;
@@ -129,7 +193,7 @@ body{
 
 .arrow-right {
   position: absolute;
-  bottom: 5%;
+  bottom: 36%;
   right: 7%;
   transform: translate(-50%, -50%);
   transform: rotate(270deg);
@@ -138,10 +202,10 @@ body{
 
 .arrow-right span {
   display: block;
-  width: 1.5vw;
-  height: 1.5vw;
-  border-bottom: 5px solid white;
-  border-right: 5px solid white;
+  width: 2.5vw;
+  height: 2.5vw;
+  border-bottom: 8px solid white;
+  border-right: 8px solid white;
   transform: rotate(45deg);
   margin: -10px;
   animation: animate 2s infinite;
@@ -167,4 +231,146 @@ body{
       opacity: 0;
       transform: rotate(45deg) translate(20px, 20px);
   }
+}
+
+
+.container #content {
+  position: absolute;
+  height: 50px;
+  width: 300px;
+  margin-left: 300px;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.container #content .on {
+  -webkit-animation-name: in-out;
+  animation-name: in-out;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+.container #content input {
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  margin-right: 85%;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  background: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Roboto;
+  outline: 0;
+  -webkit-transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out,
+    padding 0.2s;
+  transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out,
+    padding 0.2s;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+
+.container #content .search {
+  background: none;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 100%;
+  outline: 0;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
+}
+
+.container #content .search:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  background-color: #fff;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-top: 26px;
+  margin-left: 17px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.container #content .close {
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  -webkit-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+.container #content .close:before {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 4px;
+  margin-top: -1px;
+  margin-left: -13px;
+  background-color: #fff;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.container #content .close:after {
+  content: "";
+  position: absolute;
+  width: 27px;
+  height: 4px;
+  background-color: #fff;
+  margin-top: -1px;
+  margin-left: -13px;
+  cursor: pointer;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.container #content .square {
+  box-sizing: border-box;
+  padding: 0 40px 0 10px;
+  width: 300px;
+  height: 50px;
+  border: 4px solid #ffffff;
+  border-radius: 0;
+  background: black;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  outline: 0;
+  -webkit-transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out,
+    padding 0.2s;
+  transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out,
+    padding 0.2s;
+  -webkit-transition-delay: 0.4s, 0s, 0.4s;
+  transition-delay: 0.4s, 0s, 0.4s;
+  -webkit-transform: translate(-100%, -50%);
+  -ms-transform: translate(-100%, -50%);
+  transform: translate(-100%, -50%);
 }
