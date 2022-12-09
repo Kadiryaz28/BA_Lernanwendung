@@ -21,6 +21,10 @@ body{
   height: 100%;
 }
 
+#buttons{
+  margin-right: 50%;
+}
+
 .button{
   border: none;
   border-radius: 5px;
@@ -166,7 +170,7 @@ body{
   position: absolute;
   height: 50px;
   width: 300px;
-  margin-left: -100px;
+  margin-left: 41%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -279,6 +283,7 @@ body{
 }
 
 .container #content .square {
+  background-color: #000;
   box-sizing: border-box;
   padding: 0 40px 0 10px;
   width: 300px;
