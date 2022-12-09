@@ -1,9 +1,9 @@
 //let searchBox = document.querySelector('#search-box');
 //<input type="text" placeholder="search images" id="search-box">
-//const filterButtons = document.getElementsByClassName();
 const input = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
 let images = document.querySelectorAll('.container .image-container .image');
+
 
 const expand = () => {
     searchBtn.classList.toggle("close");
@@ -24,4 +24,28 @@ input.oninput = () =>{
       }
    });
 };
+
+const liItem = document.querySelectorAll('.buttons .button');
+const imgItem = document.querySelectorAll('.image img');
+
+liItem.forEach(button => {
+   li.onclick = function() {
+    //active
+    liItem.forEach(button => {
+        li.className = "";
+    })
+    li.className = "active";
+
+    //Filter
+    const value = li.textContent;
+    imgItem.forEach(img => {
+        img.style.display = 'none';
+        if (img.getAttribute('data-filter') == value.toLowerCase() || value == "All Menu") {
+            img.style.display = 'block';
+        }
+    })
+   }
+});
+
+
 
