@@ -3,12 +3,15 @@
 const input = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
 let images = document.querySelectorAll('.container .image-container .image');
+//let filterButtons = document.querySelectorAll('.container .buttons');
 
 
 const expand = () => {
     searchBtn.classList.toggle("close");
     input.classList.toggle("square");
+    //document.querySelectorAll(".button-stufe").forEach(e => e.hide());
   };
+
   searchBtn.addEventListener("click", expand);
 
 input.oninput = () =>{
@@ -26,7 +29,7 @@ input.oninput = () =>{
 };
 
 const buttonItem = document.querySelectorAll('.button-stufe');
-const imageItem = document.querySelectorAll('.image-container div');
+const imageItem = document.querySelectorAll('.image-container .info-card div');
 
 buttonItem.forEach(button => {
    button.onclick = function() {

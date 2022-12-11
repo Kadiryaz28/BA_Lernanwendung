@@ -12,9 +12,7 @@
 }
 
 body{
-  width: auto;
-  height: auto;
-  background-color: #000;
+  background-color: black;
   overflow: hidden;
 }
 
@@ -78,6 +76,7 @@ body{
 #buttons{
   margin-right: 50%;
 }
+
 .container .buttons button {
     font-weight: 600;
     height: 50px;
@@ -110,7 +109,7 @@ body{
 }
 
 .container .buttons button:active {
-    color: #000
+    color: #000;
 }
 
 .container .buttons button:active:after {
@@ -122,6 +121,7 @@ body{
 }
 
 .container .buttons button:after {
+  background-color: wheat;
     z-index: -1;
     content: '';
     position: absolute;
@@ -199,12 +199,12 @@ body{
 }
 
 .container .heading:after{
-  animation: glitchBotom 1.5s linear infinite;
+  animation: glitchBottom 1.5s linear infinite;
   clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
   -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
 }
 
-@keyframes glitchBotom{
+@keyframes glitchBottom{
   2%,64%{
     transform: translate(-2px,0);
   }
@@ -226,7 +226,7 @@ body{
 
 .container .image-container .image{
   padding:10px;
-  background-color: #fff;
+  background-color: rgb(227, 222, 177);
   box-shadow: 0 5px 10px rgba(0,0,0,.1);
   border:2px solid #000;
   width: 350px;
@@ -404,4 +404,73 @@ body{
   -ms-transform: translate(-100%, -50%);
   transform: translate(-100%, -50%);
 }
+
+.info-card {
+  width: max-content;
+  height: max-content;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+  font-family: Arial;
+}
+
+.info-card > label {
+  cursor: pointer;
+
+}
+
+.info-card > h1 {
+  margin: 15px;
+}
+
+.info-card > p {
+  margin: 15px;
+}
+
+.hint {
+  height: 30px;
+  width: 30px;
+  color: white;
+  background-color: rgba(89, 88, 88, 0.85);
+  border-radius: 15px;
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  transition: .2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hint > span {
+  position: absolute;
+  top: 7px;
+  right: 12px;
+}
+
+.hint > p {
+  overflow: hidden;
+  max-height: 0px;
+  }
+
+.hint:hover{
+  background-color: rgb(87, 71, 40);
+}
+
+#info-one:checked + .hint {
+  height: calc(100% + 30px);
+  width: calc(100% + 30px);
+}
+#info-one:checked + .hint > p {
+  max-height: 999px;
+}
+#info-two:checked + .hint {
+  height: calc(100% + 30px);
+  width: calc(100% + 30px);
+}
+
+#info-two:checked + .hint > p {
+  max-height: 999px;
+} 
+
 

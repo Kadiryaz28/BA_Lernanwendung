@@ -8,6 +8,7 @@
    <link rel="stylesheet" href="styles.css">
 
 </head>
+
 <body>
    <div class="bubbles">
       <ul>
@@ -41,40 +42,33 @@
    </form>
 
    <div class="image-container">
+      <div class="info-card">
       <div class="image" game-type="rechnen" data-filter="unterstufe">
          <img src="" alt="">
-         <h3>Binär- & Hexarechnung</h3>
+            <label for="info-one">
+              <input type="checkbox" id="info-one" style="display: none;">
+              <div class="hint">
+                <span class="fa fa-info">i</span>
+                <p>DeziBiHexa ist ein Rechenspiel, bei dem du das Rechnen von Dezimalzahlen in Binär- & Hexazahlen üben kannst</p>
+               </div>
+            </label>
+            <h3>DeziBiHexa</h3>  
       </div>
-      <div class="image" game-type="" data-filter="unterstufe">
-         <img src="Screenshots/Dummy.png" alt="">
-         <h3>Dummy 1</h3>
       </div>
-
-      <div class="image" game-type="" grade-level="">
-         <img src="Screenshots/Dummy.png" alt="">
-         <h3>Dummy 2</h3>
-      </div>
-
-      <div class="image" game-type="" grade-level="">
-         <img src="Screenshots/Dummy.png" alt="">
-         <h3>Dummy 3</h3>
-      </div>
-
-      <div class="image" game-type="" grade-level="">
-         <img src="Screenshots/Dummy.png" alt="">
-         <h3>Dummy 4</h3>
-      </div>
-
-      <div class="image" game-type="" grade-level="">
-         <img src="Screenshots/Dummy.png" alt="">
-         <h3>Dummy 5</h3>
-      </div>
-
-      <div class="image" game-type="" grade-level="">
-         <img src="Screenshots/Dummy.png" alt="">
-         <h3>Dummy 6</h3>
-      </div>
-
+      <div class="info-card">
+         <div class="image" game-type="malen" data-filter="mittelstufe">
+            <img src="Screenshots/Dummy.png" alt="">
+               <label for="info-two">
+                 <input type="checkbox" id="info-two" style="display: none;">
+                 <div class="hint">
+                   <span class="fa fa-info">i</span>
+                   <p>Hier Spiel beschreiben</p>
+                  </div>
+               </label>
+               <h3>Dummy 1</h3>  
+         </div>
+         </div>
+         </div>
       </div>
    </div>
 </div>
