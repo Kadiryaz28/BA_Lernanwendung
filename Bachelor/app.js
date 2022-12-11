@@ -25,22 +25,22 @@ input.oninput = () =>{
    });
 };
 
-const liItem = document.querySelectorAll('.buttons .button');
-const imgItem = document.querySelectorAll('.image img');
+const buttonItem = document.querySelectorAll('.button-stufe');
+const imageItem = document.querySelectorAll('.image-container div');
 
-liItem.forEach(button => {
-   li.onclick = function() {
+buttonItem.forEach(button => {
+   button.onclick = function() {
     //active
-    liItem.forEach(button => {
-        li.className = "";
+    buttonItem.forEach(button => {
+      button.className = "";
     })
-    li.className = "active";
+    button.className = "active";
 
     //Filter
-    const value = li.textContent;
-    imgItem.forEach(img => {
+    const value = button.textContent;
+    imageItem.forEach(img => {
         img.style.display = 'none';
-        if (img.getAttribute('data-filter') == value.toLowerCase() || value == "All Menu") {
+        if (img.getAttribute('data-filter') == value.toLowerCase() || value == "Alle Spiele") {
             img.style.display = 'block';
         }
     })

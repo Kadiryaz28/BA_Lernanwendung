@@ -9,7 +9,6 @@
 
 </head>
 <body>
-
    <div class="background">
       <img src="Screenshots/Binary.jpg" alt="">
     </div>
@@ -18,18 +17,17 @@
    <h1 class="heading">Informatik-Lernanwendung</h1>
 
    <div class="buttons" id="buttons">
-      
-      <button class="button">Alle Spiele</button>
-      <button class="button">Unterstufe</button>
-      <button class="button">Mittelstufe</button>
-      <button class="button">Oberstufe</button>
+      <button class="button-stufe" id="active" >Alle Spiele</button>
+      <button class="button-stufe" >Unterstufe</button>
+      <button class="button-stufe" >Mittelstufe</button>
+      <button class="button-stufe" >Oberstufe</button>
    </div>
 
    
    <form id="content">
       <input type="text" name="input" class="input" id="search-input" placeholder="" >
       <button type="reset" class="search" id="search-btn" ></button>
-    </form>
+   </form>
 
    <div class="image-container">
       <div class="image" game-type="rechnen" data-filter="unterstufe">
