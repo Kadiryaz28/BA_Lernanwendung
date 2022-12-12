@@ -7,13 +7,23 @@
    box-sizing: border-box;
    outline: none; border:none;
    text-decoration: none;
-   text-transform: capitalize;
+
    transition: all .2s linear;    
 }
 
 body{
   background-color: black;
   overflow: hidden;
+}
+
+article{
+  color: white;
+  border: solid wheat 1px;
+  padding: 10px 20px;
+  margin: 5% 9% 5% 9%;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: large;
 }
 
 .bubbles ul li{
@@ -60,6 +70,14 @@ body{
   left: 40vw;
   animation-delay: 7s;
 }
+.bubbles ul li:nth-child(10){
+  left: 30vw;
+  animation-delay: 1s;
+}
+.bubbles ul li:nth-child(11){
+  left: 50vw;
+  animation-delay: 5s;
+}
 @keyframes animate{
   0%{
     transform: scale(0);
@@ -78,9 +96,9 @@ body{
 }
 
 .container .buttons button {
+    border: solid wheat 1px;
     font-weight: 600;
     height: 50px;
-    border: none;
     outline: none;
     color: #fff;
     background: #111;
@@ -148,6 +166,7 @@ body{
 }
 
 .container .heading{
+  margin-bottom: 100px;
   color: white;
   font-size: 35px;
   font-weight: bolder;
@@ -159,6 +178,9 @@ body{
   font-family: 'Fira Mono', monospace;
   animation: glitch 2s linear infinite;
   letter-spacing: -3px;
+}
+.container .heading:hover{
+  transform: scale(1,2);
 }
 
 @keyframes glitch{
@@ -225,7 +247,7 @@ body{
 }
 
 .container .image-container .image{
-  padding:10px;
+  padding:20px;
   background-color: rgb(227, 222, 177);
   box-shadow: 0 5px 10px rgba(0,0,0,.1);
   border:2px solid #000;
@@ -291,7 +313,7 @@ body{
   width: 50px;
   height: 50px;
   margin-right: 85%;
-  border: 4px solid #ffffff;
+  border: 4px solid wheat;
   border-radius: 50%;
   background: none;
   color: #fff;
@@ -313,6 +335,7 @@ body{
 .container #content .search {
   background: none;
   position: absolute;
+  color: wheat;
   top: 0px;
   left: 0;
   height: 50px;
@@ -335,7 +358,7 @@ body{
   position: absolute;
   width: 20px;
   height: 4px;
-  background-color: #fff;
+  background-color: wheat;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
@@ -430,22 +453,25 @@ body{
 .hint {
   height: 30px;
   width: 30px;
-  color: white;
-  background-color: rgba(89, 88, 88, 0.85);
+  color: wheat;
+  background-color: rgb(109, 38, 38);
   border-radius: 15px;
   position: absolute;
-  right: -15px;
-  top: -15px;
+  right: -10px;
+  top: -10px;
   transition: .2s ease;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: larger;
 }
 
 .hint > span {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 400;
   position: absolute;
-  top: 7px;
-  right: 12px;
+  top: 6px;
+  right: 9px;
 }
 
 .hint > p {
@@ -454,19 +480,19 @@ body{
   }
 
 .hint:hover{
-  background-color: rgb(87, 71, 40);
+  background-color: rgb(174, 140, 72);
 }
 
 #info-one:checked + .hint {
-  height: calc(100% + 30px);
-  width: calc(100% + 30px);
+  height: calc(100% + 15px);
+  width: calc(100% + 15px);
 }
 #info-one:checked + .hint > p {
   max-height: 999px;
 }
 #info-two:checked + .hint {
-  height: calc(100% + 30px);
-  width: calc(100% + 30px);
+  height: calc(100% + 15px);
+  width: calc(100% + 15px);
 }
 
 #info-two:checked + .hint > p {
