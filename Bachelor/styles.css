@@ -7,13 +7,12 @@
    box-sizing: border-box;
    outline: none; border:none;
    text-decoration: none;
-
    transition: all .2s linear;    
 }
 
 body{
-  background-color: #F5F0F0;
-  overflow: hidden;
+  background-color: #f5f0f0af;
+  overflow-x: hidden;
 }
 
 article{
@@ -247,6 +246,9 @@ article{
   flex-wrap: wrap;
   gap:20px;
 }
+
+
+
 
 .container .image-container .image{
   padding:20px;
@@ -498,6 +500,13 @@ article{
 }
 
 #info-two:checked + .hint > p {
+  max-height: 999px;
+} 
+#info-three:checked + .hint {
+  height: calc(100% + 15px);
+  width: calc(100% + 15px);
+}
+#info-three:checked + .hint > p {
   max-height: 999px;
 } 
 
