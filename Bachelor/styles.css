@@ -93,7 +93,7 @@ article{
 }
 
 #buttons{
-  margin-right: 50%;
+  margin-right: 47%;
 }
 
 .container .buttons button {
@@ -247,8 +247,9 @@ article{
   gap:20px;
 }
 
-
-
+.container .image-container .image:hover{
+  background-color: whitesmoke;
+}
 
 .container .image-container .image{
   padding:20px;
@@ -509,5 +510,3 @@ article{
 #info-three:checked + .hint > p {
   max-height: 999px;
 } 
-
-
