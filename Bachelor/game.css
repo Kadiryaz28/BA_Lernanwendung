@@ -1,0 +1,116 @@
+body{
+    background: wheat;
+}
+
+:root{
+    --dimension: 180px
+}
+
+.disabled{
+    width: var(--dimension);
+    height: var(--dimension);
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: 160px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    border-radius: 9px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.disabled::placeholder{
+    color:white;
+}
+.disabled:hover{
+    animation-play-state: running;
+}
+@keyframes bounce{
+    20%{
+        transform: translateY(-8px);
+    }
+    40%{
+        transform: translateY(0px);
+    }
+    60%{
+        transform: translateY(-9px);
+    }
+    80%{
+        transform: translateY(0px);
+    }
+}
+
+#userInput{
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    padding: 11px;
+    border: 3px solid royalblue;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 0 4px royalblue;
+    transform: scale(1.5);
+    transition: 0.3s;
+}
+#input{
+    font-size: 5.5rem;    
+}
+#userInput:focus{
+    box-shadow: 0 0 10px royalblue;
+}
+#disabledInputs input, div{
+    margin-left: 100px ;
+    position: relative;
+    top: 20px;
+    right: 40px;
+}
+#disabledInputs div, #disabledInputs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#check{
+    background-color: lightcoral;
+    border: none;
+    border-radius: 4px;
+    transform: scale(2) translate(270px,190px);
+    width: 100px;
+    height: 50px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    margin-left: 50px;
+    bottom: 20px;
+    left: 200px;
+}
+#check:hover{
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+
+#score{
+    width: 130px;
+    height: 130px;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+#countDown{
+     position: absolute;
+     right: 46%;
+     bottom: 10%;
+     font-size: 2rem;
+     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
