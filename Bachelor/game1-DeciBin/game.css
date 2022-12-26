@@ -9,7 +9,7 @@ body{
 .disabled{
     width: var(--dimension);
     height: var(--dimension);
-    background-color: red;
+    background-color: #e4003a;
     color: white;
     text-align: center;
     font-size: 160px;
@@ -131,7 +131,7 @@ body{
     border-radius: 8px;
 }
 
-#digit1,#digit,#operator,#two,#equals,#result,#rest{
+#digit1,#digit2,#digit3,#digit4,#digit5,#operator,#two,#equals,#result1,#result2,#result3,#result4,#result5,#rest{
     height: 50px;
     width: 50px;
     text-align: center;
@@ -146,14 +146,11 @@ body{
     background-color: white;
 }
 
-#digit, #result{
+#digit1,#digit2,#digit3,#digit4,#digit5, #result1,#result2,#result3,#result4,#result5{
     background-color: lightblue;
 }
 #rest{
     background-color: lightgreen;
-}
-
-#rest{
     margin-left: 20px;
 }
 
