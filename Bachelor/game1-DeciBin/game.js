@@ -25,7 +25,7 @@ let inputBoxTwo = document.getElementById('inputBox2')
 let inputBoxThree = document.getElementById('inputBox3')
 let inputBoxFour = document.getElementById('inputBox4')
 let inputBoxFive = document.getElementById('inputBox5')
-//let resultFive = document.getElementById('result5')
+let resultFive = document.getElementById('result5')
 
 
 
@@ -134,6 +134,19 @@ function runInterval(){
 }
 
 checkAnswerButton.addEventListener('click',validate)
+
+checkAnswerButton.addEventListener('click', () =>{
+    digitTwo.value = "";
+    digitThree.value = "";
+    digitFour.value = "";
+    digitFive.value = "";
+
+    resultOne.value = "";
+    resultTwo.value = "";
+    resultThree.value = "";
+    resultFour.value = "";
+    resultFive.value = "";
+})
 
 userInput.addEventListener('keyup',(e) => {
     if(!inputted){
