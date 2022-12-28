@@ -1,15 +1,41 @@
-body{
-    background: rgb(206, 200, 190);
-}
-
-:root{
+:root {
     --dimension: 180px
 }
 
-.disabled{
+body {
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Trebuchet MS';
+    overflow-y: hidden;
+}
+
+.headermenu {
+    background-color: #e4003a;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    flex-direction: row;
+}
+
+.headermenu h1 {
+    font-size: 48px;
+    text-align: center;
+    margin: auto;
+    color: white;
+}
+.headermenu a{
+    margin: auto;
+}
+.headermenu img {
+    margin: auto;
+    width: 75px;
+    height: 75px;
+}
+
+.disabled {
     width: var(--dimension);
     height: var(--dimension);
-    background-color: #e4003a;
+    background-color: royalblue;
     color: white;
     text-align: center;
     font-size: 160px;
@@ -17,121 +43,120 @@ body{
     border: none;
     border-radius: 9px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-.disabled::placeholder{
-    color:white;
-}
-.disabled:hover{
-    animation-play-state: running;
-}
-@keyframes bounce{
-    20%{
-        transform: translateY(-8px);
-    }
-    40%{
-        transform: translateY(0px);
-    }
-    60%{
-        transform: translateY(-9px);
-    }
-    80%{
-        transform: translateY(0px);
-    }
+    margin: 10px auto;
 }
 
-#userInput{
-    border: none;
+.disabled::placeholder {
+    color: white;
+}
+
+.disabled:hover {
+    animation-play-state: running;
+}
+
+.eingabediv {
+    margin: -20px auto;
+    background-color: #e4003a;
     position: absolute;
-    top: 65%;
-    left: 45%;
-    padding: 11px;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+
+}
+
+#userInput {
+    border: none;
+    margin: 20px auto;
     border: 3px solid royalblue;
     border-radius: 6px;
     cursor: pointer;
-    outline: none;
-    box-shadow: 0 0 4px royalblue;
-    transform: scale(1.5);
-    transition: 0.3s;
+    width: 160px;
+    height: 40px;
+
 }
-#input{
-    font-size: 5.5rem;    
+
+#input {
+    font-size: 5.5rem;
 }
-#userInput:focus{
+
+#userInput:focus {
     box-shadow: 0 0 10px royalblue;
 }
-#disabledInputs input, div{
-    margin-left: 100px ;
-    position: relative;
-    right: 40px;
-}
-#disabledInputs div, #disabledInputs{
+
+#disabledInputs div,
+#disabledInputs {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#check{
-    background-color: lightcoral;
+
+#check {
+    background-color: royalblue;
     border: none;
     border-radius: 4px;
-    transform: scale(2) translate(270px,190px);
     width: 100px;
-    height: 50px;
+    height: 45px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: 0.3s;
     font-weight: bold;
     color: white;
-    position: relative;
-    margin-left: 50px;
-    left: 200px;
-    top: 100px;
+    margin: 50px 50px 50px 50px;
 }
-#check:hover{
+
+#check:hover {
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
 
-#score{
-    width: 130px;
-    height: 130px;
-    background: rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
-    font-size: 1.5rem;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-}
-#countDown{
-    width: 130px;
-    height: 130px;
-    background: rgba(0, 0, 0, 0.2);
+#score {
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.4);
+    margin: auto;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-     position: absolute;
-     top: 0%;
-     right: 0%;
-     font-size: 1.5rem;
+    font-size: 36px;
 }
 
-.calculation{
-    height: 281px;
+#countDown {
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.4);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-size: 48px;
+}
+
+.calculation {
     width: 500px;
-    position: absolute;
-    left: 500px;
-    top: 220px;
     border: 2px solid rgb(34, 34, 34);
     border-radius: 8px;
+    margin: 20px auto;
+    position: relative;
 }
 
-#digit1,#digit2,#digit3,#digit4,#digit5,#operator,#two,#equals,#result1,#result2,#result3,#result4,#result5,#rest{
+#digit1,
+#digit2,
+#digit3,
+#digit4,
+#digit5,
+#operator,
+#two,
+#equals,
+#result1,
+#result2,
+#result3,
+#result4,
+#result5,
+#rest {
     height: 50px;
     width: 50px;
     text-align: center;
@@ -141,16 +166,71 @@ body{
     font-size: 1.5rem;
 }
 
-#operator,#two,#equals{
+#operator,
+#two,
+#equals {
     opacity: 1;
     background-color: white;
 }
 
-#digit1,#digit2,#digit3,#digit4,#digit5, #result1,#result2,#result3,#result4,#result5{
+#digit1,
+#digit2,
+#digit3,
+#digit4,
+#digit5,
+#result1,
+#result2,
+#result3,
+#result4,
+#result5 {
     background-color: lightblue;
 }
-#rest{
+
+#rest {
     background-color: lightgreen;
     margin-left: 20px;
 }
 
+.inputBoxes {
+    margin: 15px auto;
+    padding: 0;
+}
+
+#gameover {
+    background-color: rgba(171, 159, 78, 0.9);
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%,-50%);
+    height: 70%;
+    width: 75%;
+    border: 1px solid black;
+    box-shadow: 0 1px 5px 0;
+}
+
+#gameover img {
+    margin: -50px auto;
+    padding: 0;
+    height: 300px;
+}
+
+.btn-gameover {
+    margin: 7% 2% auto;
+    width: 180px;
+    height: 50px;
+    border: 1px solid black;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 1px 5px 0;
+}
+
+.btn-gameover:hover {
+    color: #e4003a;
+    background-color: lightgrey;
+}
+
+.gameover-info {
+    margin: 5% auto;
+    font-size: 48px;
+    font-weight: bold;
+}

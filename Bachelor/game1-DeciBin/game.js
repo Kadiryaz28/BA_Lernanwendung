@@ -1,141 +1,190 @@
-let checkAnswerButton = document.getElementById('check')
+let checkAnswerButton = document.getElementById('check');
 let input = document.getElementById('input');
 let userInput = document.getElementById('userInput');
+let deziInput = document.getElementsByClassName("deziInput");
 let score = document.getElementById('score');
 let user_score = 0;
-let count_down = 150;
+let count_down = 3;
 let count_down_element = document.getElementById("countDown");
 count_down_element.innerHTML = count_down;
+
 let inputted = false;
+let running = false;
 
+/**
+ * GameOver Panel
+ */
+let gameOver = document.getElementById('gameover');
+let gameOverScore = document.getElementById('gameoverinfo');
+let gameoverVersuch = document.getElementById('btn-versuch');
+let gameoverVerlassen = document.getElementById('btn-verlassen');
 
-//neue Elemente
-let digitOne = document.getElementById('digit1')
-let digitTwo = document.getElementById('digit2')
-let digitThree = document.getElementById('digit3')
-let digitFour = document.getElementById('digit4')
-let digitFive = document.getElementById('digit5')
+//Inputfelder
+let digitOne = document.getElementById('digit1');
+let digitTwo = document.getElementById('digit2');
+let digitThree = document.getElementById('digit3');
+let digitFour = document.getElementById('digit4');
+let digitFive = document.getElementById('digit5');
 
-let resultOne = document.getElementById('result1')
-let resultTwo = document.getElementById('result2')
-let resultThree = document.getElementById('result3')
-let resultFour = document.getElementById('result4')
+let resultOne = document.getElementById('result1');
+let resultTwo = document.getElementById('result2');
+let resultThree = document.getElementById('result3');
+let resultFour = document.getElementById('result4');
 
-let inputBoxTwo = document.getElementById('inputBox2')
-let inputBoxThree = document.getElementById('inputBox3')
-let inputBoxFour = document.getElementById('inputBox4')
-let inputBoxFive = document.getElementById('inputBox5')
-let resultFive = document.getElementById('result5')
+let inputBoxTwo = document.getElementById('inputBox2');
+let inputBoxThree = document.getElementById('inputBox3');
+let inputBoxFour = document.getElementById('inputBox4');
+let inputBoxFive = document.getElementById('inputBox5');
+let resultFive = document.getElementById('result5');
 
+function isGameOver() {
+    count_down = 0;
+    gameOver.style.display="block";
+    gameOverScore.innerHTML = "Game Over! <br> Dein Score beträgt: "+`${user_score}`;
+   
+}
 
+function refreshPage() {
+    window.location.reload();
+}
 
-function randomNum(){
+gameoverVersuch.addEventListener('click',refreshPage);
+
+function randomNum() {
     return Math.ceil(Math.random() * 31);
 }
+
 randomNum();
+inputstart();
 
-
-function display(){
+function display() {
     let number = randomNum();
     input.value = number;
     digitOne.value = input.value;
 
-    if (number == 1){
+    if (number === 1) {
         inputBoxTwo.style.display = 'none';
         inputBoxThree.style.display = 'none';
         inputBoxFour.style.display = 'none';
         inputBoxFive.style.display = 'none';
     }
-    // Für Zahlen die kleiner als 4 & größer als 1 sind, braucht man nur 3 Zeilen
-    else if(number < 4){
+    // FÃ¼r Zahlen die kleiner als 4 & grÃ¶ÃŸer als 1 sind, braucht man nur 3 Zeilen
+    else if (number < 4) {
         inputBoxThree.style.display = 'none';
         inputBoxFour.style.display = 'none';
         inputBoxFive.style.display = 'none';
-
     }
 
-    // Für Zahlen die kleiner als 8 & größer gleich 4 sind, braucht man nur 3 Zeilen
-    else if(number < 8){
+    // FÃ¼r Zahlen die kleiner als 8 & grÃ¶ÃŸer gleich 4 sind, braucht man nur 3 Zeilen
+    else if (number < 8) {
         inputBoxFour.style.display = 'none';
         inputBoxFive.style.display = 'none';
-
     }
-    // Für Zahlen die kleiner als 16 & größer gleich 8 sind, braucht man nur 4 Zeilen
-    else if(number < 16){
+    // FÃ¼r Zahlen die kleiner als 16 & grÃ¶ÃŸer gleich 8 sind, braucht man nur 4 Zeilen
+    else if (number < 16) {
         inputBoxFive.style.display = 'none';
     }
+
 }
 display();
 
-resultOne.addEventListener('input', () =>{
-    digitTwo.value = resultOne.value
-})
-resultTwo.addEventListener('input', () =>{
-    digitThree.value = resultTwo.value
-})
-resultThree.addEventListener('input', () =>{
-    digitFour.value = resultThree.value
-})
-resultFour.addEventListener('input', () =>{
-    digitFive.value = resultFour.value
-})
+resultOne.addEventListener('input', () => {
+    digitTwo.value = resultOne.value;
+});
+resultTwo.addEventListener('input', () => {
+    digitThree.value = resultTwo.value;
+});
+resultThree.addEventListener('input', () => {
+    digitFour.value = resultThree.value;
+});
+resultFour.addEventListener('input', () => {
+    digitFive.value = resultFour.value;
+});
 
-
-function decitobin(wert1){
-    let sol = "";
-    while (wert1 > 0){
-        if (wert1 & 1){
-            sol = "1" + sol;
-        }else{
-            sol = "0" + sol;
+function deciToBin(decimal) {
+    let binary = "";
+    while (decimal > 0) {
+        if (decimal & 1) {
+            binary = "1" + binary;
+        } else {
+            binary = "0" + binary;
         }
-    wert1 = wert1 >> 1;
+        decimal = decimal >> 1;
     }
-    return sol;
+    return binary;
 }
 
-function validate(){
-    let correct_answer = decitobin(eval(input.value))
-    let user_value = parseFloat(userInput.value) 
+function validate() {
+    let correct_answer = deciToBin(eval(input.value));
+    let user_value = parseFloat(userInput.value);
 
-
-    if(correct_answer == user_value){
-        display()
+    if (correct_answer == user_value) {
+        display();
         user_score++;
-        count_down += 150
-        score.innerHTML = `Score: <br> ${user_score}`
+        count_down += 30;
+        score.innerHTML = `Score: <br> ${user_score}`;
     }
-    else if(user_value == ''){
-        alert('Enter a value')
-    }
-    else{
-        alert(`Incorrect, it was ${correct_answer}`)
-        display()
-        user_score --
-        score.innerHTML = `Score: ${user_score}`
-        if(user_score < 0){
-            alert("gameOver!")
-            location.reload()
+    else {
+        //alert(`Incorrect, it was ${correct_answer}`);
+        isGameOver();
+        //display();
+        user_score--;
+        score.innerHTML = `Score: ${user_score}`;
+        if (user_score < 0) {
+           // alert("gameOver!");
+            user_score = 0;
+            score.innerHTML = 0;
+            count_down_element = false;
+            isGameOver();
+            //location.reload();
         }
     }
-    userInput.value = ""
+    userInput.value = "";
 }
-function runInterval(){
+
+function runInterval() {
     let timerInterval = setInterval(() => {
         count_down -= 1;
         count_down_element.innerHTML = count_down;
 
-        if(count_down == -1) {
-            alert(`gameOver!, your Highscore: ${user_score}`)
-            location.reload()
-            display()
+        if (count_down == 10) count_down_element.style.color = "yellow";
+
+        if (count_down == 0) {
+            isGameOver();
+            display();
+            count_down_element = 0
+            //location.reload();
         }
-    },100)
+    }, 1000);
 }
 
-checkAnswerButton.addEventListener('click',validate)
+checkAnswerButton.addEventListener('click', validate);
+checkAnswerButton.addEventListener('click', clearInput);
 
-checkAnswerButton.addEventListener('click', () =>{
+
+function inputstart() {
+    for (var i = 0; i < deziInput.length; i++) {
+        deziInput[i].addEventListener('keyup', () => {
+            inputted = true;
+
+            if (inputted && !running) {
+                runInterval();
+                running = true;
+            }
+        });
+    }
+    running = false;
+}
+function clearInput() {
+    for (var i = 0; i < deziInput.length; i++) {
+        deziInput[i].value = "";
+    }
+}
+
+//resultOne.addEventListener('keyup',  runInterval);
+
+/*
+checkAnswerButton.addEventListener('click', () => {
     digitTwo.value = "";
     digitThree.value = "";
     digitFour.value = "";
@@ -148,14 +197,14 @@ checkAnswerButton.addEventListener('click', () =>{
     resultFive.value = "";
 })
 
-userInput.addEventListener('keyup',(e) => {
-    if(!inputted){
+
+userInput.addEventListener('keyup', (e) => {
+    if (!inputted) {
         runInterval()
-        inputted=true;
+        inputted = true;
     }
-    if(e.keyCode == 13){
-        validate(); 
+    if (e.keyCode == 13) {
+        validate();
     }
 })
-
-
+*/

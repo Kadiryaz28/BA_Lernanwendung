@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,61 +8,81 @@
     <title>DeciBin</title>
     <script defer src="/Bachelor/game1-DeciBin/game.js"></script>
     <Link rel="Stylesheet" type="text/css" href="game.css">
-        <link rel="stylesheet"> 
+    <link rel="stylesheet">
 </head>
-<body>
-    <input id="userInput" placeholder="Ergebnis eingeben">
 
-<div class="calculation">
-    <div class="inputBoxes" id="inputBox1">
-        <input disabled id="digit1">
-        <input disabled id="operator" placeholder=":">
-        <input disabled id="two" placeholder="2">
-        <input disabled id="equals" placeholder="=">
-        <input id="result1">
-        <input id="rest">
+<body>
+    <div class="headermenu">
+        <a href="/Bachelor/game1-DeciBin/Menü/Menüseite.html">
+            <img src="/Bachelor/Screenshots/back.png" alt="back">
+        </a>
+       <!-- <input action="action" onclick="window.history.go(-1); return false;" type="submit" type="image"
+            src="/Bachelor/game1-DeciBin/back.png" />-->
+        <h1>Dezimal zu Binär</h1>
+        <span id="score">Score</span>
+        <span id="countDown">Zeit</span>
     </div>
-    <div class="inputBoxes" id="inputBox2">
-        <input disabled id="digit2">
-        <input disabled id="operator" placeholder=":">
-        <input disabled id="two" placeholder="2">
-        <input disabled id="equals" placeholder="=">
-        <input id="result2">
-        <input id="rest">
-    </div>
-    <div class="inputBoxes" id="inputBox3">
-        <input disabled id="digit3">
-        <input disabled id="operator" placeholder=":">
-        <input disabled id="two" placeholder="2">
-        <input disabled id="equals" placeholder="=">
-        <input id="result3">
-        <input id="rest">
-    </div>
-    <div class="inputBoxes" id="inputBox4">
-        <input disabled id="digit4">
-        <input disabled id="operator" placeholder=":">
-        <input disabled id="two" placeholder="2">
-        <input disabled id="equals" placeholder="=">
-        <input id="result4">
-        <input id="rest">
-    </div>
-    <div class="inputBoxes" id="inputBox5">
-        <input disabled id="digit5">
-        <input disabled id="operator" placeholder=":">
-        <input disabled id="two" placeholder="2">
-        <input disabled id="equals" placeholder="=">
-        <input id="result5">
-        <input id="rest">
-    </div>
-</div>
 
     <div id="disabledInputs">
-        <input disabled id="input" class = "disabled" placeholder ="#1">
+        <input disabled id="input" class="disabled" placeholder="#1">
     </div>
-    
-    <button id ="check">Check</button>
-    <span id="countDown">Zeit:</span>
-    <span id="score">Score:</span>
-    
+    <div class="calculation">
+        <div class="inputBoxes" id="inputBox1">
+            <input disabled id="digit1">
+            <input disabled id="operator" placeholder=":">
+            <input disabled id="two" placeholder="2">
+            <input disabled id="equals" placeholder="=">
+            <input id="result1" class="deziInput">
+            <input id="rest" class="deziInput">
+        </div>
+        <div class="inputBoxes" id="inputBox2">
+            <input disabled id="digit2" class="deziInput">
+            <input disabled id="operator" placeholder=":">
+            <input disabled id="two" placeholder="2">
+            <input disabled id="equals" placeholder="=">
+            <input id="result2" class="deziInput">
+            <input id="rest" class="deziInput">
+        </div>
+        <div class="inputBoxes" id="inputBox3">
+            <input disabled id="digit3" class="deziInput">
+            <input disabled id="operator" placeholder=":">
+            <input disabled id="two" placeholder="2">
+            <input disabled id="equals" placeholder="=">
+            <input id="result3" class="deziInput">
+            <input id="rest" class="deziInput">
+        </div>
+        <div class="inputBoxes" id="inputBox4">
+            <input disabled id="digit4" class="deziInput">
+            <input disabled id="operator" placeholder=":">
+            <input disabled id="two" placeholder="2">
+            <input disabled id="equals" placeholder="=">
+            <input id="result4" class="deziInput">
+            <input id="rest" class="deziInput">
+        </div>
+        <div class="inputBoxes" id="inputBox5">
+            <input disabled id="digit5" class="deziInput">
+            <input disabled id="operator" placeholder=":">
+            <input disabled id="two" placeholder="2">
+            <input disabled id="equals" placeholder="=">
+            <input id="result5" class="deziInput">
+            <input id="rest" class="deziInput">
+        </div>
+    </div>
+
+    <div class="eingabediv">
+        <input id="userInput" class="deziInput" placeholder="Ergebnis eingeben">
+        <button id="check">Check</button>
+    </div>
+
+    <div id="gameover" style="display: none;">
+        <p class="gameover-info" id="gameoverinfo">Game Over!<br> Dein Score:</p>
+        <img src="/Bachelor/Screenshots/sad.png">
+        <br>
+        <button class="btn-gameover" id="btn-versuch">Neuer Versuch?</button>
+        <a href="/Bachelor/Grundgerüst/Grundgerüst.html">
+        <button class="btn-gameover" id="btn-verlassen">Spiel verlassen</button>
+        </a>
+    </div>
 </body>
+
 </html>
