@@ -4,7 +4,7 @@ let userInput = document.getElementById('userInput');
 let deziInput = document.getElementsByClassName("deziInput");
 let score = document.getElementById('score');
 let user_score = 0;
-let count_down = 3;
+let count_down = 15;
 let count_down_element = document.getElementById("countDown");
 count_down_element.innerHTML = count_down;
 
@@ -18,6 +18,7 @@ let gameOver = document.getElementById('gameover');
 let gameOverScore = document.getElementById('gameoverinfo');
 let gameoverVersuch = document.getElementById('btn-versuch');
 let gameoverVerlassen = document.getElementById('btn-verlassen');
+let gameOverSound = document.getElementById('gameOverSound');
 
 //Inputfelder
 let digitOne = document.getElementById('digit1');
@@ -41,7 +42,11 @@ function isGameOver() {
     count_down = 0;
     gameOver.style.display="block";
     gameOverScore.innerHTML = "Game Over! <br> Dein Score beträgt: "+`${user_score}`;
-   
+
+    document.getElementById("check").disabled = true;
+    document.getElementById("userInput").disabled = true;
+    document.getElementById("userInput").style.backgroundColor="white"
+    document.getElementById("gameOverSound").play()
 }
 
 function refreshPage() {
@@ -57,33 +62,48 @@ function randomNum() {
 randomNum();
 inputstart();
 
+let inputboxes = document.getElementsByClassName('inputBoxes');
+
+function createBoxes (value){
+    for (var i = 0; i < value; i++) {
+        inputboxes[i].style.visibility = "visible";
+    }
+}
+
 function display() {
     let number = randomNum();
     input.value = number;
     digitOne.value = input.value;
-
+    createBoxes(deciToBin(number).length);
+    document.getElementById("check").disabled = true;
+    checkAnswerButton.style.backgroundColor = "grey"
+    
+/*
     if (number === 1) {
         inputBoxTwo.style.display = 'none';
         inputBoxThree.style.display = 'none';
         inputBoxFour.style.display = 'none';
         inputBoxFive.style.display = 'none';
     }
-    // FÃ¼r Zahlen die kleiner als 4 & grÃ¶ÃŸer als 1 sind, braucht man nur 3 Zeilen
+    // Für Zahlen die kleiner als 4 & größer als 1 sind, braucht man nur 3 Zeilen
     else if (number < 4) {
         inputBoxThree.style.display = 'none';
         inputBoxFour.style.display = 'none';
         inputBoxFive.style.display = 'none';
+
     }
 
-    // FÃ¼r Zahlen die kleiner als 8 & grÃ¶ÃŸer gleich 4 sind, braucht man nur 3 Zeilen
+    // Für Zahlen die kleiner als 8 & größer gleich 4 sind, braucht man nur 3 Zeilen
     else if (number < 8) {
         inputBoxFour.style.display = 'none';
         inputBoxFive.style.display = 'none';
+
     }
-    // FÃ¼r Zahlen die kleiner als 16 & grÃ¶ÃŸer gleich 8 sind, braucht man nur 4 Zeilen
+    // Für Zahlen die kleiner als 16 & größer gleich 8 sind, braucht man nur 4 Zeilen
     else if (number < 16) {
         inputBoxFive.style.display = 'none';
-    }
+    }
+*/
 
 }
 display();
@@ -100,6 +120,11 @@ resultThree.addEventListener('input', () => {
 resultFour.addEventListener('input', () => {
     digitFive.value = resultFour.value;
 });
+
+userInput.addEventListener('input', () => {
+    document.getElementById('check').disabled=false
+    checkAnswerButton.style.backgroundColor = "royalblue"
+})
 
 function deciToBin(decimal) {
     let binary = "";
@@ -121,15 +146,16 @@ function validate() {
     if (correct_answer == user_value) {
         display();
         user_score++;
-        count_down += 30;
+        count_down += 12;
         score.innerHTML = `Score: <br> ${user_score}`;
     }
     else {
         //alert(`Incorrect, it was ${correct_answer}`);
         isGameOver();
+        count_down_element = false;
         //display();
-        user_score--;
-        score.innerHTML = `Score: ${user_score}`;
+        //user_score--;
+        //core.innerHTML = `Score: ${user_score}`;
         if (user_score < 0) {
            // alert("gameOver!");
             user_score = 0;
@@ -180,6 +206,16 @@ function clearInput() {
         deziInput[i].value = "";
     }
 }
+
+function fieldRows() {
+    for (var i = 0; i < deziInput.length; i++) {
+
+    }
+}
+
+checkAnswerButton.addEventListener('click', resetFields)
+
+
 
 //resultOne.addEventListener('keyup',  runInterval);
 
