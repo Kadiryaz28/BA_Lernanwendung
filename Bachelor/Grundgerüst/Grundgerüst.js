@@ -1,28 +1,24 @@
-//let searchBox = document.querySelector('#search-box');
-//<input type="text" placeholder="search images" id="search-box">
 const input = document.getElementById("search-input");
-const searchBtn = document.getElementById("search-btn");
+const searchButton = document.getElementById("search-button");
 let images = document.querySelectorAll('.container .image-container .image');
-//let filterButtons = document.querySelectorAll('.container .buttons');
+let pElement = document.getElementById('p-element');
 
 
-const expand = () => {
-    searchBtn.classList.toggle("close");
+const expandSearch = () => {
+   searchButton.classList.toggle("close");
     input.classList.toggle("square");
-    //document.querySelectorAll(".button-stufe").forEach(e => e.hide());
   };
-
-  searchBtn.addEventListener("click", expand);
+  searchButton.addEventListener("click", expandSearch);
 
 input.oninput = () =>{
    images.forEach(hide => hide.style.display = 'none');
    let value = input.value;
    images.forEach(filter =>{
-      let title = filter.getAttribute('game-type');
-      if(value == title){
+      let gameTitle = filter.getAttribute('game-type');
+      if(value == gameTitle){
          filter.style.display = 'block';
       }
-      if(input.value == ''){
+      if(input.val == ''){
          filter.style.display = 'block';
       }
    });
@@ -39,14 +35,15 @@ buttonItem.forEach(button => {
     })
     button.className = "active";
 
-    //Filter
+    //Filterfunktion
     const value = button.textContent;
     imageItem.forEach(img => {
         img.style.display = 'none';
-        if (img.getAttribute('data-filter') == value.toLowerCase() || value == "Alle Spiele") {
+        if (value == "Alle Spiele" || img.getAttribute('data-filter') == value.toLowerCase()  ) {
             img.style.display = 'block';
         }
     })
+    pElement.style.display = 'block';
    }
 });
 

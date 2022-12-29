@@ -1,8 +1,8 @@
-let checkAnswerButton = document.getElementById('check');
-let input = document.getElementById('input');
-let userInput = document.getElementById('userInput');
+let checkAnswerButton = document.getElementById("check");
+let input = document.getElementById("input");
+let userInput = document.getElementById("userInput");
 let deziInput = document.getElementsByClassName("deziInput");
-let score = document.getElementById('score');
+let score = document.getElementById("score");
 let user_score = 0;
 let count_down = 15;
 let count_down_element = document.getElementById("countDown");
@@ -14,71 +14,73 @@ let running = false;
 /**
  * GameOver Panel
  */
-let gameOver = document.getElementById('gameover');
-let gameOverScore = document.getElementById('gameoverinfo');
-let gameoverVersuch = document.getElementById('btn-versuch');
-let gameoverVerlassen = document.getElementById('btn-verlassen');
-let gameOverSound = document.getElementById('gameOverSound');
+let gameOver = document.getElementById("gameover");
+let gameOverScore = document.getElementById("gameoverinfo");
+let gameoverVersuch = document.getElementById("btn-versuch");
+let gameoverVerlassen = document.getElementById("btn-verlassen");
+let gameOverSound = document.getElementById("gameOverSound");
 
 //Inputfelder
-let digitOne = document.getElementById('digit1');
-let digitTwo = document.getElementById('digit2');
-let digitThree = document.getElementById('digit3');
-let digitFour = document.getElementById('digit4');
-let digitFive = document.getElementById('digit5');
+let digitOne = document.getElementById("digit1");
+let digitTwo = document.getElementById("digit2");
+let digitThree = document.getElementById("digit3");
+let digitFour = document.getElementById("digit4");
+let digitFive = document.getElementById("digit5");
 
-let resultOne = document.getElementById('result1');
-let resultTwo = document.getElementById('result2');
-let resultThree = document.getElementById('result3');
-let resultFour = document.getElementById('result4');
+let resultOne = document.getElementById("result1");
+let resultTwo = document.getElementById("result2");
+let resultThree = document.getElementById("result3");
+let resultFour = document.getElementById("result4");
 
-let inputBoxTwo = document.getElementById('inputBox2');
-let inputBoxThree = document.getElementById('inputBox3');
-let inputBoxFour = document.getElementById('inputBox4');
-let inputBoxFive = document.getElementById('inputBox5');
-let resultFive = document.getElementById('result5');
+let inputBoxTwo = document.getElementById("inputBox2");
+let inputBoxThree = document.getElementById("inputBox3");
+let inputBoxFour = document.getElementById("inputBox4");
+let inputBoxFive = document.getElementById("inputBox5");
+let resultFive = document.getElementById("result5");
 
 function isGameOver() {
-    count_down = 0;
-    gameOver.style.display="block";
-    gameOverScore.innerHTML = "Game Over! <br> Dein Score beträgt: "+`${user_score}`;
+  count_down = 0;
+  gameOver.style.display = "block";
+  gameOverScore.innerHTML =
+    "Game Over! <br> Dein Score beträgt: " + `${user_score}`;
 
-    document.getElementById("check").disabled = true;
-    document.getElementById("userInput").disabled = true;
-    document.getElementById("userInput").style.backgroundColor="white"
-    document.getElementById("gameOverSound").play()
+  document.getElementById("check").disabled = true;
+  document.getElementById("userInput").disabled = true;
+  document.getElementById("userInput").style.backgroundColor = "white";
+  document.getElementById("gameOverSound").play();
 }
 
 function refreshPage() {
-    window.location.reload();
+  window.location.reload();
 }
 
-gameoverVersuch.addEventListener('click',refreshPage);
+gameoverVersuch.addEventListener("click", refreshPage);
 
 function randomNum() {
-    return Math.ceil(Math.random() * 31);
+  return Math.ceil(Math.random() * 31);
 }
 
 randomNum();
 inputstart();
 
-let inputboxes = document.getElementsByClassName('inputBoxes');
+let inputboxes = document.getElementsByClassName("inputBoxes");
 
-function createBoxes (value){
-    for (var i = 0; i < value; i++) {
-        inputboxes[i].style.visibility = "visible";
-    }
+function createBoxes(value) {
+  for (var i = 0; i < value; i++) {
+    inputboxes[i].style.visibility = "visible";
+  }
 }
 
 function display() {
-    let number = randomNum();
-    input.value = number;
-    digitOne.value = input.value;
-    createBoxes(deciToBin(number).length);
-    document.getElementById("check").disabled = true;
-    checkAnswerButton.style.backgroundColor = "grey"
-    
-/*
+  let number = randomNum();
+  input.value = number;
+  digitOne.value = input.value;
+  document.getElementById("check").disabled = true;
+  checkAnswerButton.style.backgroundColor = "grey";
+  createBoxes(deciToBin(number).length);
+  console.log(createBoxes(deciToBin(number).length));
+
+  /*
     if (number === 1) {
         inputBoxTwo.style.display = 'none';
         inputBoxThree.style.display = 'none';
@@ -104,118 +106,109 @@ function display() {
         inputBoxFive.style.display = 'none';
     }
 */
-
 }
 display();
 
-resultOne.addEventListener('input', () => {
-    digitTwo.value = resultOne.value;
+resultOne.addEventListener("input", () => {
+  digitTwo.value = resultOne.value;
 });
-resultTwo.addEventListener('input', () => {
-    digitThree.value = resultTwo.value;
+resultTwo.addEventListener("input", () => {
+  digitThree.value = resultTwo.value;
 });
-resultThree.addEventListener('input', () => {
-    digitFour.value = resultThree.value;
+resultThree.addEventListener("input", () => {
+  digitFour.value = resultThree.value;
 });
-resultFour.addEventListener('input', () => {
-    digitFive.value = resultFour.value;
+resultFour.addEventListener("input", () => {
+  digitFive.value = resultFour.value;
 });
 
-userInput.addEventListener('input', () => {
-    document.getElementById('check').disabled=false
-    checkAnswerButton.style.backgroundColor = "royalblue"
-})
+userInput.addEventListener("input", () => {
+  document.getElementById("check").disabled = false;
+  checkAnswerButton.style.backgroundColor = "royalblue";
+});
 
 function deciToBin(decimal) {
-    let binary = "";
-    while (decimal > 0) {
-        if (decimal & 1) {
-            binary = "1" + binary;
-        } else {
-            binary = "0" + binary;
-        }
-        decimal = decimal >> 1;
+  let binary = "";
+  while (decimal > 0) {
+    if (decimal & 1) {
+      binary = "1" + binary;
+    } else {
+      binary = "0" + binary;
     }
-    return binary;
+    decimal = decimal >> 1;
+  }
+  return binary;
 }
 
 function validate() {
-    let correct_answer = deciToBin(eval(input.value));
-    let user_value = parseFloat(userInput.value);
+  let correct_answer = deciToBin(eval(input.value));
+  let user_value = parseFloat(userInput.value);
 
-    if (correct_answer == user_value) {
-        display();
-        user_score++;
-        count_down += 12;
-        score.innerHTML = `Score: <br> ${user_score}`;
+  if (correct_answer == user_value) {
+    display();
+    user_score++;
+    count_down += 15;
+    score.innerHTML = `Score: <br> ${user_score}`;
+  } else {
+    //alert(`Incorrect, it was ${correct_answer}`);
+    isGameOver();
+    count_down_element = false;
+    //display();
+    //user_score--;
+    //core.innerHTML = `Score: ${user_score}`;
+    if (user_score < 0) {
+      // alert("gameOver!");
+      user_score = 0;
+      score.innerHTML = 0;
+      count_down_element = false;
+      isGameOver();
+      //location.reload();
     }
-    else {
-        //alert(`Incorrect, it was ${correct_answer}`);
-        isGameOver();
-        count_down_element = false;
-        //display();
-        //user_score--;
-        //core.innerHTML = `Score: ${user_score}`;
-        if (user_score < 0) {
-           // alert("gameOver!");
-            user_score = 0;
-            score.innerHTML = 0;
-            count_down_element = false;
-            isGameOver();
-            //location.reload();
-        }
-    }
-    userInput.value = "";
+  }
+  userInput.value = "";
 }
 
 function runInterval() {
-    let timerInterval = setInterval(() => {
-        count_down -= 1;
-        count_down_element.innerHTML = count_down;
+  let timerInterval = setInterval(() => {
+    count_down -= 1;
+    count_down_element.innerHTML = count_down;
 
-        if (count_down == 10) count_down_element.style.color = "yellow";
+    if (count_down == 10) count_down_element.style.color = "yellow";
 
-        if (count_down == 0) {
-            isGameOver();
-            display();
-            count_down_element = 0
-            //location.reload();
-        }
-    }, 1000);
+    if (count_down == 0) {
+      isGameOver();
+      display();
+      count_down_element = 0;
+      //location.reload();
+    }
+  }, 1000);
 }
 
-checkAnswerButton.addEventListener('click', validate);
-checkAnswerButton.addEventListener('click', clearInput);
-
+checkAnswerButton.addEventListener("click", validate);
+checkAnswerButton.addEventListener("click", clearInput);
 
 function inputstart() {
-    for (var i = 0; i < deziInput.length; i++) {
-        deziInput[i].addEventListener('keyup', () => {
-            inputted = true;
+  for (var i = 0; i < deziInput.length; i++) {
+    deziInput[i].addEventListener("keyup", () => {
+      inputted = true;
 
-            if (inputted && !running) {
-                runInterval();
-                running = true;
-            }
-        });
-    }
-    running = false;
+      if (inputted && !running) {
+        runInterval();
+        running = true;
+      }
+    });
+  }
+  running = false;
 }
 function clearInput() {
-    for (var i = 0; i < deziInput.length; i++) {
-        deziInput[i].value = "";
-    }
+  for (var i = 0; i < deziInput.length; i++) {
+    deziInput[i].value = "";
+  }
 }
 
 function fieldRows() {
-    for (var i = 0; i < deziInput.length; i++) {
-
-    }
+  for (var i = 0; i < deziInput.length; i++) {}
 }
-
-checkAnswerButton.addEventListener('click', resetFields)
-
-
 
 //resultOne.addEventListener('keyup',  runInterval);
 

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
 
 *{
@@ -7,7 +6,7 @@
    box-sizing: border-box;
    outline: none; border:none;
    text-decoration: none;
-   transition: all .2s linear;    
+   transition: all .1s linear;    
 }
 
 body{
@@ -27,7 +26,7 @@ article{
   font-size: large;
 }
 
-.bubbles ul li{
+.bubble ul li{
   position: absolute;
   width: 35px;
   height: 35px;
@@ -36,50 +35,50 @@ article{
   background: radial-gradient(#e4003a,transparent, transparent);
   bottom: 0;
   left: 10vw;
-  animation: animate 10s linear infinite;
+  animation: bubbleAnimation 10s linear infinite;
 }
 
-.bubbles ul li:nth-child(2){
+.bubble ul li:nth-child(2){
   left: 5vw;
   animation-delay: 2s;
 }
-.bubbles ul li:nth-child(3){
+.bubble ul li:nth-child(3){
   left: 25vw;
   animation-delay: 4s;
 }
-.bubbles ul li:nth-child(4){
+.bubble ul li:nth-child(4){
   left: 60vw;
   animation-delay: 6s;
 }
-.bubbles ul li:nth-child(5){
+.bubble ul li:nth-child(5){
   left: 75vw;
   animation-delay: 4s;
 }
-.bubbles ul li:nth-child(6){
+.bubble ul li:nth-child(6){
   left: 90vw;
   animation-delay: 6s;
 }
-.bubbles ul li:nth-child(7){
+.bubble ul li:nth-child(7){
   left: 100vw;
   animation-delay: 5s;
 }
-.bubbles ul li:nth-child(8){
+.bubble ul li:nth-child(8){
   left: 0vw;
   animation-delay: 3s;
 }
-.bubbles ul li:nth-child(9){
+.bubble ul li:nth-child(9){
   left: 40vw;
   animation-delay: 7s;
 }
-.bubbles ul li:nth-child(10){
+.bubble ul li:nth-child(10){
   left: 30vw;
   animation-delay: 1s;
 }
-.bubbles ul li:nth-child(11){
+.bubble ul li:nth-child(11){
   left: 50vw;
   animation-delay: 5s;
 }
-@keyframes animate{
+@keyframes bubbleAnimation{
   0%{
     transform: scale(0);
     opacity: 1;
@@ -121,7 +120,7 @@ article{
     filter: blur(5px);
     width: calc(100% + 4px);
     height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
+    animation: glow 20s linear infinite;
     opacity: 0;
     transition: opacity .3s ease-in-out;
     border-radius: 10px;
@@ -152,9 +151,11 @@ article{
     border-radius: 10px;
 }
 
-@keyframes glowing {
+@keyframes glow {
     0% { background-position: 0 0; }
+
     50% { background-position: 400% 0; }
+
     100% { background-position: 0 0; }
 }
 
@@ -176,15 +177,15 @@ article{
   align-items: center;
   justify-content: center;
   margin: 0;
-  font-family: 'Fira Mono', monospace;
-  animation: glitch 2s linear infinite;
+  font-family: 'Verdana', monospace;
+  animation: glitchHeading 2s linear infinite;
   letter-spacing: -3px;
 }
 .container .heading:hover{
   transform: scale(1,2);
 }
 
-@keyframes glitch{
+@keyframes glitchHeading{
   2%,64%{
     transform: translate(2px,0) skew(0deg);
   }
@@ -204,12 +205,12 @@ article{
 }
 
 .container .heading:before{
-  animation: glitchTop 1s linear infinite;
+  animation: glitch1s linear infinite;
   clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
 }
 
-@keyframes glitchTop{
+@keyframes glitch{
   2%,64%{
     transform: translate(2px,-2px);
   }
@@ -222,20 +223,20 @@ article{
 }
 
 .container .heading:after{
-  animation: glitchBottom 1.5s linear infinite;
+  animation: glitchBot 1.5s linear infinite;
   clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
   -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
 }
 
-@keyframes glitchBottom{
+@keyframes glitchBot{
   2%,64%{
     transform: translate(-2px,0);
   }
   4%,60%{
-    transform: translate(-2px,0);
+    transform: translate(-3px,0);
   }
   62%{
-    transform: translate(-22px,5px) skew(21deg); 
+    transform: translate(-21px,5px) skew(20deg); 
   }
 }
 
@@ -258,12 +259,12 @@ article{
   border:2px solid #000;
   width: 350px;
   border-radius: 5px;
-  animation: fadeIn .2s linear;
+  animation: ruck .2s linear;
 }
 
-@keyframes fadeIn {
+@keyframes ruck {
   0%{
-    transform: scale(.5) translateY(-10px);
+    transform: scale(.5) translateY(-10px); 
     opacity: 0;
   }
 }
@@ -271,17 +272,16 @@ article{
 .container .image-container .image img{
   height: 250px;
   width: 100%;
-  object-fit: cover;
   margin-bottom: 10px;
   border-radius: 5px;
+  object-fit: cover;
 }
 
 .container .image-container .image h3{
   font-size: 20px;
 }
 
-
-@media (max-width:450px){
+@media (max-width:440px){
 
   .container{
     padding:25px 20px;
@@ -305,8 +305,8 @@ article{
 .container #content .on {
   -webkit-animation-name: in-out;
   animation-name: in-out;
-  -webkit-animation-duration: 0.7s;
-  animation-duration: 0.7s;
+  -webkit-animation-duration: 0.6s;
+  animation-duration: 0.6s;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-iteration-count: 1;
@@ -324,7 +324,7 @@ article{
   color: #fff;
   font-size: 16px;
   font-weight: 400;
-  font-family: Roboto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   outline: 0;
   -webkit-transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out,
     padding 0.2s;
@@ -418,16 +418,16 @@ article{
   border: 4px solid black;
   border-radius: 5px;
   color: #fff;
-  font-family: Roboto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
   font-weight: 400;
   outline: 0;
-  -webkit-transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out,
+  -webkit-transition: width 0.3s ease-in-out, border-radius 0.3s ease-in-out,
     padding 0.2s;
-  transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out,
+  transition: width 0.3s ease-in-out, border-radius 0.3s ease-in-out,
     padding 0.2s;
-  -webkit-transition-delay: 0.4s, 0s, 0.4s;
-  transition-delay: 0.4s, 0s, 0.4s;
+  -webkit-transition-delay: 0.3s, 0s, 0.3s;
+  transition-delay: 0.3s, 0s, 0.3s;
   -webkit-transform: translate(-100%, -50%);
   -ms-transform: translate(-100%, -50%);
   transform: translate(-100%, -50%);
@@ -438,21 +438,11 @@ article{
   height: max-content;
   background-color: white;
   position: relative;
-  border-radius: 6px;
   font-family: Arial;
 }
 
 .info-card > label {
   cursor: pointer;
-
-}
-
-.info-card > h1 {
-  margin: 15px;
-}
-
-.info-card > p {
-  margin: 15px;
 }
 
 .hint {
@@ -464,16 +454,21 @@ article{
   position: absolute;
   right: -10px;
   top: -10px;
-  transition: .2s ease;
+  transition: .3s ease;
   display: flex;
+  font-size: larger;
   justify-content: center;
   align-items: center;
-  font-size: larger;
+
+}
+
+#p-element{
+  margin: 140px auto;
 }
 
 .hint > span {
   font-family: 'Courier New', Courier, monospace;
-  font-weight: 400;
+  font-weight: 500;
   position: absolute;
   top: 6px;
   right: 9px;

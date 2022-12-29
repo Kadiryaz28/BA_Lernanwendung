@@ -1,146 +1,144 @@
 :root {
-    --dimension: 180px
+  --dimension: 180px;
 }
 
 body {
-    margin: 0 auto;
-    text-align: center;
-    font-family: 'Trebuchet MS';
-    overflow-y: hidden;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Trebuchet MS";
+  overflow-y: hidden;
 }
 
 .headermenu {
-    background-color: #e4003a;
-    display: flex;
-    justify-content: space-evenly;
-    margin: auto;
-    flex-direction: row;
+  background-color: #e4003a;
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+  flex-direction: row;
 }
 
 .headermenu h1 {
-    font-size: 48px;
-    text-align: center;
-    margin: auto;
-    color: white;
+  font-size: 48px;
+  text-align: center;
+  margin: auto;
+  color: white;
 }
-.headermenu a{
-    margin: auto;
+.headermenu a {
+  margin: auto;
 }
 .headermenu img {
-    margin: auto;
-    width: 75px;
-    height: 75px;
+  margin: auto;
+  width: 75px;
+  height: 75px;
 }
 
 .disabled {
-    width: var(--dimension);
-    height: var(--dimension);
-    background-color: royalblue;
-    color: white;
-    text-align: center;
-    font-size: 160px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    border: none;
-    border-radius: 9px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin: 10px auto;
+  width: var(--dimension);
+  height: var(--dimension);
+  background-color: royalblue;
+  color: white;
+  text-align: center;
+  font-size: 160px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: none;
+  border-radius: 9px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 10px auto;
 }
 
 .disabled::placeholder {
-    color: white;
+  color: white;
 }
 
 .disabled:hover {
-    animation-play-state: running;
+  animation-play-state: running;
 }
 
 .eingabediv {
-    margin: -20px auto;
-    background-color: #e4003a;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    text-align: center;
-
+  margin: -20px auto;
+  background-color: #e4003a;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
 }
 
 #userInput {
-    border: none;
-    margin: 20px auto;
-    border: 3px solid royalblue;
-    border-radius: 6px;
-    cursor: pointer;
-    width: 160px;
-    height: 40px;
-
+  border: none;
+  margin: 20px auto;
+  border: 3px solid royalblue;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 160px;
+  height: 40px;
 }
 
 #input {
-    font-size: 5.5rem;
+  font-size: 5.5rem;
 }
 
 #userInput:focus {
-    box-shadow: 0 0 10px royalblue;
+  box-shadow: 0 0 10px royalblue;
 }
 
 #disabledInputs div,
 #disabledInputs {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #check {
-    background-color: royalblue;
-    border: none;
-    border-radius: 4px;
-    width: 100px;
-    height: 45px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
-    color: white;
-    margin: 50px 50px 50px 50px;
+  background-color: royalblue;
+  border: none;
+  border-radius: 4px;
+  width: 100px;
+  height: 45px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  color: white;
+  margin: 50px 50px 50px 50px;
 }
 
 #check:hover {
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
 
 #score {
-    width: 100px;
-    height: 100px;
-    background: rgba(0, 0, 0, 0.4);
-    margin: auto;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    font-size: 36px;
+  width: 100px;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.4);
+  margin: auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-size: 36px;
 }
 
 #countDown {
-    width: 100px;
-    height: 100px;
-    background: rgba(0, 0, 0, 0.4);
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    font-size: 48px;
+  width: 100px;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.4);
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-size: 48px;
 }
 
 .calculation {
-    width: 500px;
-    border: 2px solid rgb(34, 34, 34);
-    border-radius: 8px;
-    margin: 20px auto;
-    position: relative;
+  width: 500px;
+  border: 2px solid rgb(34, 34, 34);
+  border-radius: 8px;
+  margin: 20px auto;
+  position: relative;
 }
 
 #digit1,
@@ -157,20 +155,20 @@ body {
 #result4,
 #result5,
 #rest {
-    height: 50px;
-    width: 50px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 1.5rem;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
 #operator,
 #two,
 #equals {
-    opacity: 1;
-    background-color: white;
+  opacity: 1;
+  background-color: white;
 }
 
 #digit1,
@@ -183,55 +181,55 @@ body {
 #result3,
 #result4,
 #result5 {
-    background-color: lightblue;
+  background-color: lightblue;
 }
 
 #rest {
-    background-color: lightgreen;
-    margin-left: 20px;
+  background-color: lightgreen;
+  margin-left: 20px;
 }
 
 .inputBoxes {
-    margin: 15px auto;
-    padding: 0;
-    visibility: hidden;
+  margin: 15px auto;
+  padding: 0;
+  visibility: hidden;
 }
 
 #gameover {
-    background-color: rgba(171, 159, 78, 0.9);
-    position: absolute;
-    left: 50%;
-    top: 48%;
-    transform: translate(-50%,-50%);
-    height: 70%;
-    width: 75%;
-    border: 1px solid black;
-    box-shadow: 0 1px 5px 0;
+  background-color: rgba(171, 159, 78, 0.9);
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  height: 70%;
+  width: 75%;
+  border: 1px solid black;
+  box-shadow: 0 1px 5px 0;
 }
 
 #gameover img {
-    margin: -50px auto;
-    padding: 0;
-    height: 300px;
+  margin: -50px auto;
+  padding: 0;
+  height: 300px;
 }
 
 .btn-gameover {
-    margin: 7% 2% auto;
-    width: 180px;
-    height: 50px;
-    border: 1px solid black;
-    font-size: 20px;
-    font-weight: 700;
-    box-shadow: 0 1px 5px 0;
+  margin: 7% 2% auto;
+  width: 180px;
+  height: 50px;
+  border: 1px solid black;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 0 1px 5px 0;
 }
 
 .btn-gameover:hover {
-    color: #e4003a;
-    background-color: lightgrey;
+  color: #e4003a;
+  background-color: lightgrey;
 }
 
 .gameover-info {
-    margin: 5% auto;
-    font-size: 48px;
-    font-weight: bold;
+  margin: 5% auto;
+  font-size: 48px;
+  font-weight: bold;
 }

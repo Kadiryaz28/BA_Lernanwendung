@@ -4,13 +4,13 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <script defer src="app.js"></script>
-   <link rel="stylesheet" href="Grundgerüst.css">
+   <script defer src="/Bachelor/Grundgerüst/Grundgerüst.js"></script>
+   <link rel="stylesheet" href="/Bachelor/Grundgerüst/Grundgerüst.css">
 
 </head>
 
 <body>
-   <div class="bubbles">
+   <div class="bubble">
       <ul>
          <li></li>
          <li></li>
@@ -30,14 +30,14 @@
 
    <div class="buttons" id="buttons">
       <button class="button-stufe" id="active" >Alle Spiele</button>
-      <button class="button-stufe" >Unterstufe</button>
-      <button class="button-stufe" >Mittelstufe</button>
-      <button class="button-stufe" >Oberstufe</button>
+      <button class="button-stufe">Unterstufe</button>
+      <button class="button-stufe">Mittelstufe</button>
+      <button class="button-stufe">Oberstufe</button>
    </div>
    
    <form id="content">
       <input type="text" name="input" class="input" id="search-input" placeholder="" >
-      <button type="reset" class="search" id="search-btn" ></button>
+      <button type="reset" class="search" id="search-button" ></button>
    </form>
 
    <article>Herzlich Willkommen auf der Informatik-Lernanwendung. Hier kannst du eine Sammlung kostenloser Lernanwendungen finden, 
@@ -57,7 +57,7 @@
               <input type="checkbox" id="info-one" style="display: none;">
               <div class="hint">
                 <span class="fa fa-info">  i</span>
-                <p>Decibin ist ein Rechenspiel, bei dem du das Rechnen von Dezimalzahlen in Binärzahlen üben kannst</p>
+                <p id="p-element">Decibin ist ein Rechenspiel, bei dem du das Rechnen von Dezimalzahlen in Binärzahlen üben kannst</p>
                </div>
             </label>
             <h3>DeciBin</h3>  
@@ -72,7 +72,7 @@
                  <input type="checkbox" id="info-two" style="display: none;">
                  <div class="hint">
                    <span class="fa fa-info">i</span>
-                   <p>Hier Spiel beschreiben</p>
+                   <p id="p-element">Hier Spiel beschreiben</p>
                   </div>
                </label>
                <h3>Dummy 1</h3>  
@@ -86,7 +86,7 @@
                     <input type="checkbox" id="info-three" style="display: none;">
                     <div class="hint">
                       <span class="fa fa-info">i</span>
-                      <p>Hier Spiel beschreiben</p>
+                      <p id="p-element">Hier Spiel beschreiben</p>
                      </div>
                   </label>
                   <h3>Dummy 2</h3>  

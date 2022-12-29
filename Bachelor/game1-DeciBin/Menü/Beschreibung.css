@@ -1,6 +1,5 @@
 body{
     font-family: 'Just Another Hand', cursive;
-    text-transform: uppercase;
     height: 100vh;
     display: grid;
     grid-template-columns: 100px 1fr 1fr 50px;
@@ -14,8 +13,8 @@ h1{
     grid-row: 1;
     justify-self: end;
     align-self: end;
-    font-size: 70px;
-    margin: 0 50px 0 0px;
+    font-size: 80px;
+    margin: 0 25px 0 0px;
 }
 
 .background{
@@ -57,7 +56,6 @@ button{
     border-radius: 5px;
 
 }
-
 button:after {
     position: absolute;
     content: "";
