@@ -175,13 +175,16 @@ body {
 #digit2,
 #digit3,
 #digit4,
-#digit5,
+#digit5{
+  background-color: lightblue;
+}
+
 #result1,
 #result2,
 #result3,
 #result4,
 #result5 {
-  background-color: lightblue;
+  background-color: lightyellow;
 }
 
 #rest {
@@ -249,5 +252,20 @@ article{
 article #img{
   width: 80px;
   margin: 10px auto;
-  font-size: larger;
+}
+
+#example{
+  position: relative;
+  margin: auto;
+  width: 390px;
+  height: 150px;
+  bottom: 390px;
+  left: -545px;
+  text-align: left;
+}
+
+#imgExample1, #imgExample2{
+  width: 40px;
+  justify-content: left;
+  margin: 10px auto;
 }

@@ -66,7 +66,6 @@ inputstart();
 let inputboxes = document.getElementsByClassName("inputBoxes");
 
 
-
 function createBoxes(value) {
   for (var i = 0; i < inputboxes.length; i++) {
     inputboxes[i].style.visibility = "hidden";
@@ -149,8 +148,6 @@ function runInterval() {
   let timerInterval = setInterval(() => {
     count_down -= 1;
     count_down_element.innerHTML = count_down;
-
-    if (count_down == 10) count_down_element.style.color = "yellow";
 
     if (count_down == 0) {
       isGameOver();
