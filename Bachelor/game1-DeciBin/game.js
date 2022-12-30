@@ -65,7 +65,12 @@ inputstart();
 
 let inputboxes = document.getElementsByClassName("inputBoxes");
 
+
+
 function createBoxes(value) {
+  for (var i = 0; i < inputboxes.length; i++) {
+    inputboxes[i].style.visibility = "hidden";
+  }
   for (var i = 0; i < value; i++) {
     inputboxes[i].style.visibility = "visible";
   }
@@ -78,34 +83,6 @@ function display() {
   document.getElementById("check").disabled = true;
   checkAnswerButton.style.backgroundColor = "grey";
   createBoxes(deciToBin(number).length);
-  console.log(createBoxes(deciToBin(number).length));
-
-  /*
-    if (number === 1) {
-        inputBoxTwo.style.display = 'none';
-        inputBoxThree.style.display = 'none';
-        inputBoxFour.style.display = 'none';
-        inputBoxFive.style.display = 'none';
-    }
-    // Für Zahlen die kleiner als 4 & größer als 1 sind, braucht man nur 3 Zeilen
-    else if (number < 4) {
-        inputBoxThree.style.display = 'none';
-        inputBoxFour.style.display = 'none';
-        inputBoxFive.style.display = 'none';
-
-    }
-
-    // Für Zahlen die kleiner als 8 & größer gleich 4 sind, braucht man nur 3 Zeilen
-    else if (number < 8) {
-        inputBoxFour.style.display = 'none';
-        inputBoxFive.style.display = 'none';
-
-    }
-    // Für Zahlen die kleiner als 16 & größer gleich 8 sind, braucht man nur 4 Zeilen
-    else if (number < 16) {
-        inputBoxFive.style.display = 'none';
-    }
-*/
 }
 display();
 
@@ -205,35 +182,3 @@ function clearInput() {
     deziInput[i].value = "";
   }
 }
-
-function fieldRows() {
-  for (var i = 0; i < deziInput.length; i++) {}
-}
-
-//resultOne.addEventListener('keyup',  runInterval);
-
-/*
-checkAnswerButton.addEventListener('click', () => {
-    digitTwo.value = "";
-    digitThree.value = "";
-    digitFour.value = "";
-    digitFive.value = "";
-
-    resultOne.value = "";
-    resultTwo.value = "";
-    resultThree.value = "";
-    resultFour.value = "";
-    resultFive.value = "";
-})
-
-
-userInput.addEventListener('keyup', (e) => {
-    if (!inputted) {
-        runInterval()
-        inputted = true;
-    }
-    if (e.keyCode == 13) {
-        validate();
-    }
-})
-*/
