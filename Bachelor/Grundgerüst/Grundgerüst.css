@@ -16,14 +16,14 @@ body{
 
 article{
   text-align: left;
-  background-color: #e4003a;
+  background-color: #e80e45;
   color: black;
   border: solid black 1px;
   padding: 10px 20px;
   margin: 5% 9% 5% 9%;
   border-radius: 10px;
   font-weight: 600;
-  font-size: large;
+  font-size: medium;
 }
 
 .bubble ul li{
