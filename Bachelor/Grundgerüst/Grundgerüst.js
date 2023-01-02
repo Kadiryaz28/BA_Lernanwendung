@@ -1,7 +1,6 @@
 const input = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
 let images = document.querySelectorAll('.container .image-container .image');
-let pElement = document.getElementById('p-element');
 
 
 const expandSearch = () => {
@@ -18,7 +17,7 @@ input.oninput = () =>{
       if(value == gameTitle){
          filter.style.display = 'block';
       }
-      if(input.val == ''){
+      if(input.value == ''){
          filter.style.display = 'block';
       }
    });
@@ -39,11 +38,10 @@ buttonItem.forEach(button => {
     const value = button.textContent;
     imageItem.forEach(img => {
         img.style.display = 'none';
-        if (value == "Alle Spiele" || img.getAttribute('data-filter') == value.toLowerCase()  ) {
+        if (img.getAttribute('data-filter') == value.toLowerCase()  || value == "Alle Spiele" ) {
             img.style.display = 'block';
         }
     })
-    pElement.style.display = 'block';
    }
 });
 

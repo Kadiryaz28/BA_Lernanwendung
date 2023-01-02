@@ -1,5 +1,5 @@
 let checkAnswerButton = document.getElementById("check");
-let input = document.getElementById("input");
+let digitInput = document.getElementById("input");
 let userInput = document.getElementById("userInput");
 let deziInput = document.getElementsByClassName("deziInput");
 let score = document.getElementById("score");
@@ -31,12 +31,13 @@ let resultOne = document.getElementById("result1");
 let resultTwo = document.getElementById("result2");
 let resultThree = document.getElementById("result3");
 let resultFour = document.getElementById("result4");
+let resultFive = document.getElementById("result5");
 
 let inputBoxTwo = document.getElementById("inputBox2");
 let inputBoxThree = document.getElementById("inputBox3");
 let inputBoxFour = document.getElementById("inputBox4");
 let inputBoxFive = document.getElementById("inputBox5");
-let resultFive = document.getElementById("result5");
+
 
 function isGameOver() {
   count_down = 0;
@@ -77,8 +78,8 @@ function createBoxes(value) {
 
 function display() {
   let number = randomNum();
-  input.value = number;
-  digitOne.value = input.value;
+  digitInput.value = number;
+  digitOne.value = digitInput.value;
   document.getElementById("check").disabled = true;
   checkAnswerButton.style.backgroundColor = "grey";
   createBoxes(deciToBin(number).length);
@@ -117,7 +118,8 @@ function deciToBin(decimal) {
 }
 
 function validate() {
-  let correct_answer = deciToBin(eval(input.value));
+  let correct_answer = deciToBin(eval(digitInput
+    .value));
   let user_value = parseFloat(userInput.value);
 
   if (correct_answer == user_value) {

@@ -483,25 +483,10 @@ article{
   background-color: black;
 }
 
-#info-one:checked + .hint {
+.info-description:checked + .hint {
   height: calc(100% + 15px);
   width: calc(100% + 15px);
 }
-#info-one:checked + .hint > p {
+.info-description:checked + .hint > p {
   max-height: 999px;
 }
-#info-two:checked + .hint {
-  height: calc(100% + 15px);
-  width: calc(100% + 15px);
-}
-
-#info-two:checked + .hint > p {
-  max-height: 999px;
-} 
-#info-three:checked + .hint {
-  height: calc(100% + 15px);
-  width: calc(100% + 15px);
-}
-#info-three:checked + .hint > p {
-  max-height: 999px;
-} 
