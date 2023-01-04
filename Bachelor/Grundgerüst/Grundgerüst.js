@@ -14,7 +14,7 @@ input.oninput = () =>{
    let value = input.value;
    images.forEach(filter =>{
       let gameTitle = filter.getAttribute('game-type');
-      if(value == gameTitle){
+      if(value == gameTitle || value.toUpperCase() == gameTitle.toUpperCase()){
          filter.style.display = 'block';
       }
       if(input.value == ''){
@@ -24,7 +24,8 @@ input.oninput = () =>{
 };
 
 const buttonItem = document.querySelectorAll('.button-stufe');
-const imageItem = document.querySelectorAll('.image-container .info-card div');
+const imageItem = document.getElementsByClassName('gameItem');
+console.log(imageItem);
 
 buttonItem.forEach(button => {
    button.onclick = function() {
@@ -36,14 +37,12 @@ buttonItem.forEach(button => {
 
     //Filterfunktion
     const value = button.textContent;
-    imageItem.forEach(img => {
-        img.style.display = 'none';
-        if (img.getAttribute('data-filter') == value.toLowerCase()  || value == "Alle Spiele" ) {
-            img.style.display = 'block';
+    for(let i = 0; i < imageItem.length; i++){
+        if (value == "Alle Spiele" || imageItem[i].getAttribute('data-filter') == value.toLowerCase()) {
+         imageItem[i].style.display = 'block';
+        } else{
+         imageItem[i].style.display = 'none';
         }
-    })
+    }
    }
 });
-
-
-
