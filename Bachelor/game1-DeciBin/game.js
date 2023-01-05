@@ -38,7 +38,6 @@ let inputBoxThree = document.getElementById("inputBox3");
 let inputBoxFour = document.getElementById("inputBox4");
 let inputBoxFive = document.getElementById("inputBox5");
 
-
 function isGameOver() {
   count_down = 0;
   gameOver.style.display = "block";
@@ -65,7 +64,6 @@ randomNum();
 inputstart();
 
 let inputboxes = document.getElementsByClassName("inputBoxes");
-
 
 function createBoxes(value) {
   for (var i = 0; i < inputboxes.length; i++) {
@@ -118,8 +116,7 @@ function deciToBin(decimal) {
 }
 
 function validate() {
-  let correct_answer = deciToBin(eval(digitInput
-    .value));
+  let correct_answer = deciToBin(eval(digitInput.value));
   let user_value = parseFloat(userInput.value);
 
   if (correct_answer == user_value) {
@@ -128,19 +125,13 @@ function validate() {
     count_down += 15;
     score.innerHTML = `Score: <br> ${user_score}`;
   } else {
-    //alert(`Incorrect, it was ${correct_answer}`);
     isGameOver();
     count_down_element = false;
-    //display();
-    //user_score--;
-    //core.innerHTML = `Score: ${user_score}`;
     if (user_score < 0) {
-      // alert("gameOver!");
       user_score = 0;
       score.innerHTML = 0;
       count_down_element = false;
       isGameOver();
-      //location.reload();
     }
   }
   userInput.value = "";
@@ -155,7 +146,6 @@ function runInterval() {
       isGameOver();
       display();
       count_down_element = 0;
-      //location.reload();
     }
   }, 1000);
 }

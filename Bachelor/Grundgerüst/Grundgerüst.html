@@ -26,7 +26,14 @@
    </div>
 
 <div class="container">
+
    <h1 class="heading">Informatik-Lernanwendung</h1>
+   <!-- 
+      Die Div-Klasse "buttons" beinhaltet die 4 Filterboxen für das Grundgerüst.
+      die button-stufe-Klassen können erweitert/ reduziert oder auch umgeändert werden,
+      indem man eine neue Button mit dem <button>-Tag erstellt. Die Bezeichnung des Buttons kann
+      dann für die erstellte Anwendung mit dem "data-filter"-Attribut ausgestattet werden 
+    -->
 
    <div class="buttons" id="buttons">
       <button class="button-stufe" id="active" >Alle Spiele</button>
@@ -55,24 +62,43 @@
       Falls dir das Niveau egal ist, 
       kannst du in der Suchfunktion Verben wie z.B. "rechnen", "malen" oder "zeichnen" etc. eingeben, um Spiele in der gewünschten Kategorie zu finden.
    </article>
-
+   <!-- Die Div-Klasse "image-container" beinhaltet alle images, also Anwendung, welche auf dem Grundgerüst erstellt werden-->
    <div class="image-container">
       
+      <!-- Das <a href>-Tag dient zur Verlinkung der HTML-Dateien, falls die Anwendung angeklickt wird -->
       <a href="/Bachelor/game1-DeciBin/Menü/Menüseite.html">
+      <!-- 
+      Das Herzstück jeder Anwendung auf dem Grundgerüst ist die Div-Klasse "info-card"
+      welches zusammengefasst das Spiel widerspiegelt
+      -->
       <div class="info-card">
+      <!-- Die Div-Klasse "image gameItem" ist der Teil, der Attribute enthält, für die Suchfunktion und Filterboxen anschlägt
+      @game-type wird für die Suchfunktion verwendet und sollte mit einem Verb gefüttert werden, damit die Suchfunktion anschlägt
+      Im Fall von "DeciBin" findet die Suchfunktion das Spiel, wenn man "rechnen" oder "Rechnen" in die Suchfunktion einträgt
+      @data-filter wird für die Filterboxen verwendet und sollte mit einer Bezeichnungen verwendet werden, welche für die button class="button-stufe"
+      verwendet wurden. In Fall von "DeciBin" ist das Attribut "unterstufe"
+      -->
       <div class="image gameItem" game-type="rechnen" data-filter="unterstufe">
+         <!-- Das img-Tag sollte ebenfalls mit einem Pfad für das Foto ausgefüllt werden, auf dem es sich befindet.
+         Zu sehen ist das Foto dann als Cover in der Box der Anwendung-->
          <img src="/Bachelor/Screenshots/DeziBin.jpg" alt="">
+            <!-- Ein label-Tag für die CSS, welches der Programmierer nicht berücksichtigen braucht-->
             <label for="info-one">
+               <!-- Das input-Tag hat Bezug auf die Checkbox für das i, dies braucht der Programmierer nicht berücksichtigen  -->
               <input type="checkbox" id="info-one" class="info-description" style="display: none;">
+              <!-- Die Div-Klasse "hint" ist die Infobox, der Programmierer braucht dies ebenfalls nicht berücksichtigen-->
               <div class="hint">
+               <!-- Das "i", welches auf der Infobox zu sehen ist-->
                 <span class="fa fa-info">  i</span>
+                <!-- Das p-Tag dient als Beschreibung für das Spiel, welcher ausgefüllt werden sollte. Dieser erscheint, wenn man auf die Infobox (i) klickt-->
                 <p id="p-element">Decibin ist ein Rechenspiel, bei dem du das Rechnen von Dezimalzahlen in Binärzahlen üben kannst</p>
                </div>
             </label>
+            <!-- Die Überschrift für die Anwendung, welche ausgefüllt werden sollte-->
             <h3>DeciBin</h3>  
       </div>
       </div>
-   </a>
+      </a>
       
       <div class="info-card">
          <div class="image gameItem" game-type="malen" data-filter="mittelstufe">
