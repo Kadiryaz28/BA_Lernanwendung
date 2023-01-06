@@ -175,7 +175,7 @@ body {
 #digit2,
 #digit3,
 #digit4,
-#digit5{
+#digit5 {
   background-color: lightblue;
 }
 
@@ -237,7 +237,7 @@ body {
   font-weight: bold;
 }
 
-article{
+article {
   width: 300px;
   height: 110px;
   position: relative;
@@ -249,12 +249,12 @@ article{
   font-weight: 500;
 }
 
-article #img{
+article #img {
   width: 80px;
   margin: 10px auto;
 }
 
-#example{
+#example {
   position: relative;
   margin: auto;
   width: 390px;
@@ -264,7 +264,8 @@ article #img{
   text-align: left;
 }
 
-#imgExample1, #imgExample2{
+#imgExample1,
+#imgExample2 {
   width: 40px;
   justify-content: left;
   margin: 10px auto;

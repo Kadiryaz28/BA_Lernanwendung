@@ -13,13 +13,13 @@
   <body>
     <div class="headermenu">
       <a href="/Bachelor/game1-DeciBin/Menü/Menüseite.html">
+        <!-- Quelle: https://cdn-icons-png.flaticon.com/512/93/93634.png -->
         <img src="/Bachelor/Screenshots/back.png" alt="back" />
       </a>
       <h1>Dezimal zu Binär</h1>
       <span id="score">Score</span>
       <span id="countDown">Zeit</span>
     </div>
-
 
     <div id="disabledInputs">
       <input disabled id="input" class="disabled" placeholder="#1" />
@@ -69,17 +69,24 @@
 
     <article>
       Benutze die Tab-Taste, um schneller zwischen den Feldern zu wechseln
-      <img id="img"src="/Bachelor/Screenshots/Tab.png">
+      <img id="img" src="/Bachelor/Screenshots/Tab.png" />
     </article>
 
     <article id="example">
       <table>
         <tr>
-          <td><img id="imgExample1"src="/Bachelor/Screenshots/Ergebnisfeld.png"></td>
+          <td>
+            <img
+              id="imgExample1"
+              src="/Bachelor/Screenshots/Ergebnisfeld.png"
+            />
+          </td>
           <td>Trage hier das Ergebnis der Division ein</td>
         </tr>
         <tr>
-          <td><img id="imgExample2"src="/Bachelor/Screenshots/Restfeld.png"></td>
+          <td>
+            <img id="imgExample2" src="/Bachelor/Screenshots/Restfeld.png" />
+          </td>
           <td>Trage hier den Rest der Division ein (1 oder 0)</td>
         </tr>
       </table>
@@ -91,6 +98,8 @@
     </div>
 
     <div id="gameover" style="display: none">
+
+      <!-- Quelle: https://freesound.org/people/cabled_mess/sounds/350981/ -->
       <audio id="gameOverSound">
         <source src="/Bachelor/Audio/gameOver.wav" />
       </audio>
@@ -98,6 +107,7 @@
         Game Over!<br />
         Dein Score:
       </p>
+      <!-- Quelle: https://www.freeiconspng.com/img/4288 -->
       <img src="/Bachelor/Screenshots/sad.png" />
       <br />
       <button class="btn-gameover" id="btn-versuch">Neuer Versuch?</button>
