@@ -1,0 +1,6 @@
+Am einfachsten ist es,
+
+1. Den Visual Studio Code runterzuladen
+2. Die Extension "Live Server" runterzuladen
+3. Eine der HTML-Dateien zu öffnen
+4. Rechtsklick in das HTML-Codefeld und auf "Open with Live Server" zu klicken 
